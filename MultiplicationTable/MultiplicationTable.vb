@@ -11,13 +11,20 @@ Module MultiplicationTable
 
     Sub Main()
 
-        Dim columnMultiplier As Integer
+        Dim columnCount As Integer
 
         Console.WriteLine("Please type a whole number.")
-        columnMultiplier = CInt(Console.ReadLine())
-        For i = 1 To columnMultiplier
-            Console.WriteLine(i)
+        columnCount = CInt(Console.ReadLine())
+        Console.WriteLine("Enjoy your " & columnCount & " X " & columnCount &
+                          " multiplication table")
+        For i = 1 To columnCount
+            Console.Write(i & "     ")
         Next
+        Console.WriteLine()
+        For i = 1 To columnCount
+            Console.Write(2 * i & "     ")
+        Next
+
         Console.Read()
     End Sub
 
