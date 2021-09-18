@@ -11,7 +11,7 @@ Module MultiplicationTable
 
     Sub Main()
 
-        Dim columnCount As Integer = 10
+        Dim columnCount As Integer
         Dim newString As String
         Dim columnString As String
         Dim lineTwo As String
@@ -24,14 +24,14 @@ Module MultiplicationTable
                           " multiplication table")
         For i = 1 To columnCount
             Console.Write(RowCount(columnCount))
-
+            Console.WriteLine()
         Next
         Console.Read()
     End Sub
 
     Function RowCount(ByVal columnCount2 As Integer) As Integer
         For i = 1 To columnCount2
-            Console.Write()
+            Console.Write(columnCount2)
         Next
     End Function
 
