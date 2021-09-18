@@ -17,24 +17,22 @@ Module MultiplicationTable
         Dim lineTwo As String
 
         newString = CStr(columnCount)
-        Console.WriteLine(newString.PadLeft(20))
 
         Console.WriteLine("Please type a whole number.")
         columnCount = CInt(Console.ReadLine())
         Console.WriteLine("Enjoy your " & columnCount & " X " & columnCount &
                           " multiplication table")
         For i = 1 To columnCount
-            columnString = CStr(i)
-            Console.Write(columnString.PadLeft(5))
+            Console.Write(RowCount(columnCount))
 
         Next
-        Console.WriteLine()
-        For i = 1 To columnCount
-            lineTwo = CStr(i * 2)
-            Console.Write(lineTwo.PadLeft(5))
-        Next
-
         Console.Read()
     End Sub
+
+    Function RowCount(ByVal columnCount2 As Integer) As Integer
+        For i = 1 To columnCount2
+            Console.Write()
+        Next
+    End Function
 
 End Module
