@@ -11,30 +11,44 @@ Module MultiplicationTable
 
     Sub Main()
 
-        Dim columnCount As Integer = 10
-        Dim newString As String
-        Dim columnString As String
-        Dim lineTwo As String
+        Dim tableDimensions As Integer
+        Dim iterationCount As Integer
+        Dim wholeNumber As Boolean
 
-        newString = CStr(columnCount)
-        Console.WriteLine(newString.PadLeft(20))
+        Do While wholeNumber = False
+            Try
+                Console.WriteLine("Please type a whole number.")
+                tableDimensions = CInt(Console.ReadLine())
+                wholeNumber = True
+            Catch
+                wholeNumber = False
+            End Try
+        Loop
+        'Prompt user input and prevent string input.
 
-        Console.WriteLine("Please type a whole number.")
-        columnCount = CInt(Console.ReadLine())
-        Console.WriteLine("Enjoy your " & columnCount & " X " & columnCount &
-                          " multiplication table")
-        For i = 1 To columnCount
-            columnString = CStr(i)
-            Console.Write(columnString.PadLeft(5))
-
+        Console.WriteLine("Enjoy your " & tableDimensions & " X " & tableDimensions &
+                                  " multiplication table")
+        For i = 1 To tableDimensions
+            iterationCount = i
+            Console.Write(RowCount(iterationCount, tableDimensions))
+            Console.WriteLine()
         Next
-        Console.WriteLine()
-        For i = 1 To columnCount
-            lineTwo = CStr(i * 2)
-            Console.Write(lineTwo.PadLeft(5))
-        Next
+        'Number of rows is dictated by input. Function dictates length of rows.
 
         Console.Read()
     End Sub
+
+    Function RowCount(ByVal iterationCount As Integer, ByVal tableDimensions As Integer) As String
+
+        Dim stringConversion As String
+
+        For i = 1 To tableDimensions
+            stringConversion = CStr(i * iterationCount)
+            Console.Write(stringConversion.PadLeft(6))
+        Next
+        Return Nothing
+
+    End Function
+    'For loop within the function allows multiple integers in one row.
 
 End Module
