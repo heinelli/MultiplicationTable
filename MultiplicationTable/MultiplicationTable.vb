@@ -33,15 +33,18 @@ Module MultiplicationTable
         Console.Read()
     End Sub
 
-    Function RowCount(ByVal columnCount2 As Integer, ByVal columncount3 As Integer) As Integer
+    Function RowCount(ByVal columnCount2 As Integer, ByVal columncount3 As Integer) As String
+
         Dim newString2 As String
         Dim turtle As Integer
+        Dim cat As String
 
         For i = 1 To columncount3
             turtle = i * columnCount2
             newString2 = CStr(turtle)
             Console.Write(newString2.PadLeft(10))
         Next
+        Return Nothing
     End Function
 
 End Module
