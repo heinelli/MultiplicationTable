@@ -13,17 +13,26 @@ Module MultiplicationTable
 
         Dim tableDimensions As Integer
         Dim iterationCount As Integer
+        Dim wholeNumber As Boolean
 
+        Do While wholeNumber = False
+            Try
+                Console.WriteLine("Please type a whole number.")
+                tableDimensions = CInt(Console.ReadLine())
+                wholeNumber = True
+            Catch
+                wholeNumber = False
+            End Try
+        Loop
 
-        Console.WriteLine("Please type a whole number.")
-        tableDimensions = CInt(Console.ReadLine())
         Console.WriteLine("Enjoy your " & tableDimensions & " X " & tableDimensions &
-                          " multiplication table")
+                                  " multiplication table")
         For i = 1 To tableDimensions
             iterationCount = i
             Console.Write(RowCount(iterationCount, tableDimensions))
             Console.WriteLine()
         Next
+
         Console.Read()
     End Sub
 
@@ -32,11 +41,11 @@ Module MultiplicationTable
         Dim stringConversion As String
 
         For i = 1 To iterationCount
-
             stringConversion = CStr(i * tableDimensions)
             Console.Write(stringConversion.PadLeft(6))
         Next
         Return Nothing
+
     End Function
 
 End Module
