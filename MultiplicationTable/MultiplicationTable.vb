@@ -34,7 +34,6 @@ Module MultiplicationTable
             Console.WriteLine()
         Next
         'Number of rows is dictated by input. Function dictates length of rows.
-
         Console.Read()
     End Sub
 
