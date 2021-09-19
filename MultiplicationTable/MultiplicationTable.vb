@@ -11,38 +11,30 @@ Module MultiplicationTable
 
     Sub Main()
 
-        Dim columnCount As Integer
-        Dim newString As String
-        Dim columnString As String
-        Dim lineTwo As String
-        Dim tester1 As Integer
-        Dim tester2 As Integer
+        Dim tableDimensions As Integer
+        Dim iterationCount As Integer
 
-        newString = CStr(columnCount)
 
         Console.WriteLine("Please type a whole number.")
-        columnCount = CInt(Console.ReadLine())
-        Console.WriteLine("Enjoy your " & columnCount & " X " & columnCount &
+        tableDimensions = CInt(Console.ReadLine())
+        Console.WriteLine("Enjoy your " & tableDimensions & " X " & tableDimensions &
                           " multiplication table")
-        For i = 1 To columnCount
-            tester1 = i
-            Console.Write(RowCount(tester1, columnCount))
+        For i = 1 To tableDimensions
+            iterationCount = i
+            Console.Write(RowCount(iterationCount, tableDimensions))
             Console.WriteLine()
-
         Next
         Console.Read()
     End Sub
 
-    Function RowCount(ByVal columnCount2 As Integer, ByVal columncount3 As Integer) As String
+    Function RowCount(ByVal tableDimensions As Integer, ByVal iterationCount As Integer) As String
 
-        Dim newString2 As String
-        Dim turtle As Integer
-        Dim cat As String
+        Dim stringConversion As String
 
-        For i = 1 To columncount3
-            turtle = i * columnCount2
-            newString2 = CStr(turtle)
-            Console.Write(newString2.PadLeft(10))
+        For i = 1 To iterationCount
+
+            stringConversion = CStr(i * tableDimensions)
+            Console.Write(stringConversion.PadLeft(6))
         Next
         Return Nothing
     End Function
