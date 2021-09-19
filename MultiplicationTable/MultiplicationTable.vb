@@ -24,6 +24,7 @@ Module MultiplicationTable
                 wholeNumber = False
             End Try
         Loop
+        'Prompt user input and prevent string input.
 
         Console.WriteLine("Enjoy your " & tableDimensions & " X " & tableDimensions &
                                   " multiplication table")
@@ -32,20 +33,22 @@ Module MultiplicationTable
             Console.Write(RowCount(iterationCount, tableDimensions))
             Console.WriteLine()
         Next
+        'Number of rows is dictated by input. Function dictates length of rows.
 
         Console.Read()
     End Sub
 
-    Function RowCount(ByVal tableDimensions As Integer, ByVal iterationCount As Integer) As String
+    Function RowCount(ByVal iterationCount As Integer, ByVal tableDimensions As Integer) As String
 
         Dim stringConversion As String
 
-        For i = 1 To iterationCount
-            stringConversion = CStr(i * tableDimensions)
+        For i = 1 To tableDimensions
+            stringConversion = CStr(i * iterationCount)
             Console.Write(stringConversion.PadLeft(6))
         Next
         Return Nothing
 
     End Function
+    'For loop within the function allows multiple integers in one row.
 
 End Module
